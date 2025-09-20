@@ -8,7 +8,6 @@ const winPatterns = [
     [0, 3, 6], [1, 4, 7], [2, 5, 8], // columns
     [0, 4, 8], [2, 4, 6] // diagonals
 ];
-
 // DOM elements
 const gameButtons = document.querySelectorAll('.game-button');
 const resetButton = document.getElementById('resetButton');
