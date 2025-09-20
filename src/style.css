@@ -143,9 +143,27 @@ h1 {
 .win-row-0   { width: 58vmin; top: 9vmin;  left: 1vmin;  transform: rotate(0deg); }
 .win-row-1   { width: 58vmin; top: 29vmin; left: 1vmin;  transform: rotate(0deg); }
 .win-row-2   { width: 58vmin; top: 49vmin; left: 1vmin;  transform: rotate(0deg); }
-.win-col-0   { width: 58vmin; top: 1vmin;  left: 9vmin;  transform: rotate(90deg); }
-.win-col-1   { width: 58vmin; top: 1vmin;  left: 29vmin; transform: rotate(90deg); }
-.win-col-2   { width: 58vmin; top: 1vmin;  left: 49vmin; transform: rotate(90deg); }
+.win-col-0 { 
+  width: 6px;
+  height: 58vmin;
+  left: 9vmin; 
+  top: 1vmin; 
+  transform: rotate(0deg); 
+}
+.win-col-1 { 
+  width: 6px;
+  height: 58vmin;
+  left: 29vmin; 
+  top: 1vmin; 
+  transform: rotate(0deg); 
+}
+.win-col-2 { 
+  width: 6px;
+  height: 58vmin;
+  left: 49vmin; 
+  top: 1vmin; 
+  transform: rotate(0deg); 
+}
 .win-diag-0  { width: 82vmin; top: -1vmin; left: -1vmin;  transform: rotate(45deg); }
 .win-diag-1  { width: 82vmin; top: -1vmin; left: -1vmin;  transform: rotate(-45deg); }
 
