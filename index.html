@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic Tac Toe Game</title>
-    <link rel="stylesheet" href="src/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tic Tac Toe Game</title>
+  <link rel="stylesheet" href="src/style.css" />
 </head>
 <body>
-    <div class="game-container">
-        <h1>Tic Tac Toe</h1>
-        
-        <div class="game-grid" id="gameGrid">
-            <button class="game-button" data-index="0"></button>
-            <button class="game-button" data-index="1"></button>
-            <button class="game-button" data-index="2"></button>
-            <button class="game-button" data-index="3"></button>
-            <button class="game-button" data-index="4"></button>
-            <button class="game-button" data-index="5"></button>
-            <button class="game-button" data-index="6"></button>
-            <button class="game-button" data-index="7"></button>
-            <button class="game-button" data-index="8"></button>
-        <div class="win-line" id="winLine"></div>
-        </div>
-        
-        <button class="reset-button" id="resetButton">Reset Game</button>
-        
-        <div class="message-container hide" id="messageContainer">
-            <div class="winner-message" id="winnerMessage"></div>
-            <button class="new-game-button" id="newGameButton">New Game</button>
-        </div>
-    </div>
+  <div class="game-container">
+    <h1>Tic Tac Toe</h1>
     
-    <script src="src/app.js"></script>
+    <div class="game-grid" id="gameGrid">
+      <button class="game-button" data-index="0"></button>
+      <button class="game-button" data-index="1"></button>
+      <button class="game-button" data-index="2"></button>
+      <button class="game-button" data-index="3"></button>
+      <button class="game-button" data-index="4"></button>
+      <button class="game-button" data-index="5"></button>
+      <button class="game-button" data-index="6"></button>
+      <button class="game-button" data-index="7"></button>
+      <button class="game-button" data-index="8"></button>
+    </div> <!-- Properly close game-grid div -->
+
+    <!-- Place winLine outside the grid for absolute positioning -->
+    <div class="win-line" id="winLine"></div>
+    
+    <button class="reset-button" id="resetButton">Reset Game</button>
+    
+    <div class="message-container hide" id="messageContainer">
+      <div class="winner-message" id="winnerMessage"></div>
+      <button class="new-game-button" id="newGameButton">New Game</button>
+    </div>
+  </div>
+  
+  <script src="src/app.js"></script>
 </body>
 </html>
