@@ -9,9 +9,8 @@
 <body>
   <div class="game-container">
     <h1>Tic Tac Toe</h1>
-    
+
     <div class="game-grid" id="gameGrid">
-      <div class="win-line win-diag-0"></div>
       <button class="game-button" data-index="0"></button>
       <button class="game-button" data-index="1"></button>
       <button class="game-button" data-index="2"></button>
@@ -21,19 +20,19 @@
       <button class="game-button" data-index="6"></button>
       <button class="game-button" data-index="7"></button>
       <button class="game-button" data-index="8"></button>
-    </div> <!-- Properly close game-grid div -->
 
-    <!-- Place winLine outside the grid for absolute positioning -->
-    <div class="win-line" id="winLine"></div>
-    
+      <!-- Single win-line controlled by JS; positioned relative to .game-grid -->
+      <div class="win-line" id="winLine"></div>
+    </div>
+
     <button class="reset-button" id="resetButton">Reset Game</button>
-    
+
     <div class="message-container hide" id="messageContainer">
       <div class="winner-message" id="winnerMessage"></div>
       <button class="new-game-button" id="newGameButton">New Game</button>
     </div>
   </div>
-  
+
   <script src="src/app.js"></script>
 </body>
 </html>
