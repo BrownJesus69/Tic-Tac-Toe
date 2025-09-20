@@ -245,19 +245,21 @@ h1 {
 }
 
 .win-diag-0 {
-  width: 87vmin;     /* slightly wider to fully cover diagonal */
+  width: 84.85vmin;               /* 60vmin x sqrt(2) = 84.85vmin, perfectly fits diagonal */
   height: 6px;
-  top: 3vmin;        /* slightly down for alignment */
-  left: -4vmin;      /* shift left to start at top-left cell */
+  top: 1vmin;
+  left: 1vmin;
   transform: rotate(45deg);
+  transform-origin: left top;
 }
 
 .win-diag-1 {
-  width: 87vmin;
+  width: 84.85vmin;
   height: 6px;
-  top: 3vmin;
-  left: 55vmin;      /* shift right to cover top-right start */
+  top: 1vmin;
+  left: 1vmin;
   transform: rotate(-45deg);
+  transform-origin: left top;
 }
 
 
