@@ -98,6 +98,20 @@ function endGame(message) {
     });
 }
 
+function showWinLine(pattern) {
+  const winLine = document.getElementById('winLine');
+  winLine.className = 'win-line'; // reset classes
+  if (pattern[0] === 0 && pattern[1] === 1 && pattern[2] === 2) winLine.classList.add('win-row-0');
+  else if (pattern[0] === 3 && pattern[1] === 4 && pattern[2] === 5) winLine.classList.add('win-row-1');
+  else if (pattern[0] === 6 && pattern[1] === 7 && pattern[2] === 8) winLine.classList.add('win-row-2');
+  else if (pattern[0] === 0 && pattern[1] === 3 && pattern[2] === 6) winLine.classList.add('win-col-0');
+  else if (pattern[0] === 1 && pattern[1] === 4 && pattern[2] === 7) winLine.classList.add('win-col-1');
+  else if (pattern[0] === 2 && pattern[1] === 5 && pattern[2] === 8) winLine.classList.add('win-col-2');
+  else if (pattern[0] === 0 && pattern[1] === 4 && pattern[2] === 8) winLine.classList.add('win-diag-0');
+  else if (pattern[0] === 2 && pattern[1] === 4 && pattern[2] === 6) winLine.classList.add('win-diag-1');
+  winLine.style.display = 'block';
+}
+
 function resetGame() {
     // Reset game state
     board = ['', '', '', '', '', '', '', '', ''];
