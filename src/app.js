@@ -8,12 +8,14 @@ const winPatterns = [
     [0, 3, 6], [1, 4, 7], [2, 5, 8], // columns
     [0, 4, 8], [2, 4, 6] // diagonals
 ];
+
 // DOM elements
 const gameButtons = document.querySelectorAll('.game-button');
 const resetButton = document.getElementById('resetButton');
 const newGameButton = document.getElementById('newGameButton');
 const messageContainer = document.getElementById('messageContainer');
 const winnerMessage = document.getElementById('winnerMessage');
+const winLine = document.getElementById('winLine'); // Ensure this exists in your HTML
 
 // Initialize game when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
@@ -53,7 +55,9 @@ function handleButtonClick(index) {
     }
     
     // Check for winner
-    if (checkWinner()) {
+    const winPattern = checkWinner();
+    if (winPattern) {
+        showWinLine(winPattern); // Draw the winning line
         endGame(`Player ${currentPlayer} Wins!`);
         return;
     }
@@ -69,17 +73,20 @@ function handleButtonClick(index) {
 }
 
 function checkWinner() {
+    // Loop through all possible win patterns
     for (let pattern of winPatterns) {
         const [a, b, c] = pattern;
+        // Check if all three cells match and are not empty
         if (board[a] && board[a] === board[b] && board[a] === board[c]) {
-            return true;
+            return pattern; // Return winning pattern (e.g., [0, 1, 2])
         }
     }
-    return false;
+    return null;
 }
 
 function checkDraw() {
-    return board.every(cell => cell !== '') && !checkWinner();
+    // If all cells are filled and no winner, it's a draw
+    return board.every(cell => cell !== '');
 }
 
 function endGame(message) {
@@ -98,17 +105,16 @@ function endGame(message) {
 }
 
 function showWinLine(pattern) {
-  const winLine = document.getElementById('winLine');
-  winLine.className = 'win-line'; // reset classes
-  if (pattern[0] === 0 && pattern[1] === 1 && pattern[2] === 2) winLine.classList.add('win-row-0');
-  else if (pattern[0] === 3 && pattern[1] === 4 && pattern[2] === 5) winLine.classList.add('win-row-1');
-  else if (pattern[0] === 6 && pattern[1] === 7 && pattern[2] === 8) winLine.classList.add('win-row-2');
-  else if (pattern[0] === 0 && pattern[1] === 3 && pattern[2] === 6) winLine.classList.add('win-col-0');
-  else if (pattern[0] === 1 && pattern[1] === 4 && pattern[2] === 7) winLine.classList.add('win-col-1');
-  else if (pattern[0] === 2 && pattern[1] === 5 && pattern[2] === 8) winLine.classList.add('win-col-2');
-  else if (pattern[0] === 0 && pattern[1] === 4 && pattern[2] === 8) winLine.classList.add('win-diag-0');
-  else if (pattern[0] === 2 && pattern[1] === 4 && pattern[2] === 6) winLine.classList.add('win-diag-1');
-  winLine.style.display = 'block';
+    winLine.className = 'win-line'; // reset classes
+    if (pattern[0] === 0 && pattern[1] === 1 && pattern[2] === 2) winLine.classList.add('win-row-0');
+    else if (pattern[0] === 3 && pattern[1] === 4 && pattern[2] === 5) winLine.classList.add('win-row-1');
+    else if (pattern[0] === 6 && pattern[1] === 7 && pattern[2] === 8) winLine.classList.add('win-row-2');
+    else if (pattern[0] === 0 && pattern[1] === 3 && pattern[2] === 6) winLine.classList.add('win-col-0');
+    else if (pattern[0] === 1 && pattern[1] === 4 && pattern[2] === 7) winLine.classList.add('win-col-1');
+    else if (pattern[0] === 2 && pattern[1] === 5 && pattern[2] === 8) winLine.classList.add('win-col-2');
+    else if (pattern[0] === 0 && pattern[1] === 4 && pattern[2] === 8) winLine.classList.add('win-diag-0');
+    else if (pattern[0] === 2 && pattern[1] === 4 && pattern[2] === 6) winLine.classList.add('win-diag-1');
+    winLine.style.display = 'block';
 }
 
 function resetGame() {
@@ -127,4 +133,8 @@ function resetGame() {
     // Hide message container
     messageContainer.classList.add('hide');
     winnerMessage.textContent = '';
+
+    // Hide the winning line
+    winLine.style.display = 'none';
+    winLine.className = '';
 }
