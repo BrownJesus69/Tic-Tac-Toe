@@ -244,21 +244,22 @@ h1 {
   transform: rotate(0deg); 
 }
 
-.win-diag-0  { 
-  width: 82vmin; 
-  height: 6px; 
-  top: 1vmin; 
-  left: 1vmin;  
-  transform: rotate(45deg); 
+.win-diag-0 {
+  width: 87vmin;     /* slightly wider to fully cover diagonal */
+  height: 6px;
+  top: 3vmin;        /* slightly down for alignment */
+  left: -4vmin;      /* shift left to start at top-left cell */
+  transform: rotate(45deg);
 }
 
-.win-diag-1  { 
-  width: 82vmin; 
-  height: 6px; 
-  top: 1vmin; 
-  left: -21vmin;  
-  transform: rotate(-45deg); 
+.win-diag-1 {
+  width: 87vmin;
+  height: 6px;
+  top: 3vmin;
+  left: 55vmin;      /* shift right to cover top-right start */
+  transform: rotate(-45deg);
 }
+
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
